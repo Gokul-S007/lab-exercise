@@ -1,0 +1,12 @@
+import java.rmi.*;
+import java.net.*;
+public class CalcClient{
+public static void main(String args[]){
+try{
+CalcInt co=(CalcInt)Naming.lookup("rmi://Localhost:2000/csecrmi");
+System.out.println(co.add(634,895));
+}catch(Exception e){
+System.out.println(e);
+}
+}
+}
