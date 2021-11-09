@@ -1,0 +1,12 @@
+import java .rmi.*;
+import java.net.*;
+import java.rmi.registry.*;
+public class CalcServer{
+public static void main(String arg[]){
+try{
+CalcImpl cobj=new CalcImpl();
+LocateRegistry.createRegistry(2000);
+Naming.rebind("rmi://localhost:2000/csecrmi",cobj);
+}catch(Exception e){System.out.println(e);}
+}
+}
